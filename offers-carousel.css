@@ -1,0 +1,420 @@
+/* ═══════════════════════════════════════════════════════════
+   Carrousel hero Smartech — pleine largeur, ~450px desktop
+   ───────────────────────────────────────────────────────────
+   Image par défaut : --oc-bg-fallback (si --oc-bg absent sur une slide)
+   Chemins locaux : voir fin de fichier
+═══════════════════════════════════════════════════════════ */
+
+.hero-carousel-wrap {
+  --oc-blue: #123b5d;
+  --oc-blue-mid: #1a527e;
+  --oc-blue-light: #2fafe3;
+  --oc-yellow: #f8c515;
+  --oc-yellow-hover: #fcd34d;
+  --oc-nav-size: 48px;
+  --oc-transition: 0.5s cubic-bezier(0.33, 1, 0.68, 1);
+  /* Image de fond par défaut (remplacer par un fichier local si besoin) */
+  --oc-bg-fallback: url("https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1600&q=75");
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  overflow: hidden;
+  background: var(--oc-blue);
+}
+
+@media (max-width: 768px) {
+  .hero-carousel-wrap .oc-slide--ia {
+    --oc-bg: url("assets/img/ia/carousel-mobile.webp");
+  }
+
+  .hero-carousel-wrap .oc-slide--langues {
+    --oc-bg: url("assets/img/carousel/carousel-langues-mobile.webp");
+  }
+
+  .hero-carousel-wrap .oc-slide--digital {
+    --oc-bg: url("assets/img/carousel/carousel-digital-mobile.webp");
+  }
+}
+
+/* Conteneur : référence position + pile z-index explicite */
+.hero-carousel-wrap .oc {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  margin: 0;
+  outline: none;
+}
+
+.hero-carousel-wrap .oc:focus-visible {
+  box-shadow: inset 0 0 0 3px rgba(248, 197, 21, 0.85);
+}
+
+/* Viewport : sous les contrôles (évite de bloquer les clics sur prev/next) */
+.hero-carousel-wrap .oc-viewport {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  overflow: hidden;
+  touch-action: manipulation;
+  /* Desktop ~450px */
+  height: 450px;
+  min-height: 450px;
+  max-height: 450px;
+}
+
+@media (max-width: 768px) {
+  .hero-carousel-wrap .oc-viewport {
+    height: auto;
+    min-height: 420px;
+    max-height: none;
+    aspect-ratio: 16 / 11;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-carousel-wrap .oc-viewport {
+    min-height: 380px;
+    aspect-ratio: 4 / 5;
+  }
+}
+
+.hero-carousel-wrap .oc-track {
+  display: flex;
+  height: 100%;
+  min-height: 100%;
+  transition: transform var(--oc-transition);
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-carousel-wrap .oc-track {
+    transition: none;
+  }
+}
+
+/* ── Slides ─────────────────────────────────────────────── */
+.hero-carousel-wrap .oc-slide {
+  position: relative;
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  display: flex;
+  align-items: stretch;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Fond : --oc-bg sur .oc-slide ; sinon --oc-bg-fallback */
+.hero-carousel-wrap .oc-slide-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-color: var(--oc-blue);
+  background-image: var(--oc-bg, var(--oc-bg-fallback));
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: scale(1.02);
+  transition: transform 7s ease-out;
+}
+
+.hero-carousel-wrap .oc-slide[aria-hidden="false"] .oc-slide-bg {
+  transform: scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-carousel-wrap .oc-slide-bg {
+    transition: none;
+    transform: scale(1);
+  }
+}
+
+.hero-carousel-wrap .oc-slide-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(105deg, rgba(10, 28, 48, 0.88) 0%, rgba(10, 28, 48, 0.5) 50%, rgba(10, 28, 48, 0.3) 100%),
+    linear-gradient(180deg, rgba(8, 22, 38, 0.45) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.hero-carousel-wrap .oc-slide-inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: var(--container, min(1180px, calc(100vw - 32px)));
+  margin: 0 auto;
+  padding: 24px 16px 56px;
+  display: flex;
+  align-items: center;
+  min-height: 100%;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
+/* Le bloc texte + liens reçoivent les clics */
+.hero-carousel-wrap .oc-slide-copy {
+  pointer-events: auto;
+  max-width: 36rem;
+  padding: 18px 22px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow:
+    0 16px 40px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+@media (max-width: 768px) {
+  .hero-carousel-wrap .oc-slide-inner {
+    padding: 20px 14px 52px;
+    align-items: flex-end;
+  }
+
+  .hero-carousel-wrap .oc-slide-copy {
+    padding: 16px 18px;
+    max-width: none;
+  }
+}
+
+.hero-carousel-wrap .oc-slide-eyebrow {
+  margin: 0 0 8px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--oc-yellow);
+}
+
+.hero-carousel-wrap .oc-slide-copy h1,
+.hero-carousel-wrap .oc-slide-copy h2 {
+  margin: 0 0 10px;
+  font-family: "Outfit", sans-serif;
+  font-weight: 900;
+  font-size: clamp(1.35rem, 3.5vw, 2.15rem);
+  line-height: 1.1;
+  color: #fff;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.35);
+}
+
+.hero-carousel-wrap .oc-slide-copy h2 {
+  font-size: clamp(1.25rem, 3.2vw, 1.95rem);
+}
+
+.hero-carousel-wrap .oc-slide-lead {
+  margin: 0 0 16px;
+  font-size: clamp(0.9rem, 1.65vw, 1.02rem);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.92);
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* ── CTA : bleu + hover jaune ─────────────────────────────── */
+.hero-carousel-wrap .oc-slide-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.hero-carousel-wrap .oc-cta {
+  position: relative;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 46px;
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-family: "Outfit", sans-serif;
+  font-weight: 800;
+  font-size: 0.9rem;
+  text-decoration: none;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.2s ease,
+    box-shadow 0.25s ease;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.22);
+}
+
+.hero-carousel-wrap .oc-cta:focus-visible {
+  outline: 3px solid var(--oc-yellow);
+  outline-offset: 2px;
+}
+
+/* Principal : plein bleu */
+.hero-carousel-wrap .oc-cta--primary {
+  background: linear-gradient(135deg, var(--oc-blue) 0%, var(--oc-blue-mid) 100%);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.hero-carousel-wrap .oc-cta--primary:hover {
+  background: linear-gradient(135deg, var(--oc-yellow) 0%, var(--oc-yellow-hover) 100%);
+  color: var(--oc-blue);
+  border-color: var(--oc-yellow);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(248, 197, 21, 0.38);
+}
+
+/* Secondaire : contour bleu clair sur fond transparent */
+.hero-carousel-wrap .oc-cta--secondary {
+  background: rgba(18, 59, 93, 0.35);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.hero-carousel-wrap .oc-cta--secondary:hover {
+  background: linear-gradient(135deg, var(--oc-yellow) 0%, #fbbf24 100%);
+  color: var(--oc-blue);
+  border-color: var(--oc-yellow);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(248, 197, 21, 0.35);
+}
+
+@media (max-width: 480px) {
+  .hero-carousel-wrap .oc-slide-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-carousel-wrap .oc-cta {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ── Flèches : au-dessus du viewport (z-index > viewport) ─ */
+.hero-carousel-wrap .oc-btn {
+  position: absolute;
+  top: 50%;
+  z-index: 30;
+  width: var(--oc-nav-size);
+  height: var(--oc-nav-size);
+  margin-top: calc(var(--oc-nav-size) / -2);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  transition:
+    background 0.22s ease,
+    border-color 0.22s ease,
+    color 0.22s ease,
+    transform 0.18s ease,
+    box-shadow 0.22s ease;
+}
+
+.hero-carousel-wrap .oc-btn:hover {
+  background: var(--oc-yellow);
+  color: var(--oc-blue);
+  border-color: var(--oc-yellow);
+  transform: scale(1.06);
+  box-shadow: 0 12px 32px rgba(248, 197, 21, 0.4);
+}
+
+.hero-carousel-wrap .oc-btn:focus-visible {
+  outline: 3px solid var(--oc-yellow);
+  outline-offset: 2px;
+}
+
+.hero-carousel-wrap .oc-btn:active {
+  transform: scale(0.97);
+}
+
+.hero-carousel-wrap .oc-btn--prev {
+  left: clamp(10px, 2vw, 24px);
+}
+
+.hero-carousel-wrap .oc-btn--next {
+  right: clamp(10px, 2vw, 24px);
+}
+
+@media (max-width: 480px) {
+  .hero-carousel-wrap .oc-btn {
+    width: 44px;
+    height: 44px;
+    margin-top: -22px;
+  }
+}
+
+/* ── Pagination ─────────────────────────────────────────── */
+.hero-carousel-wrap .oc-dots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 14px;
+  z-index: 30;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 0;
+  padding: 0 12px;
+  pointer-events: none;
+}
+
+.hero-carousel-wrap .oc-dots .oc-dot {
+  pointer-events: auto;
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border: 2px solid rgba(255, 255, 255, 0.55);
+  border-radius: 999px;
+  background: transparent;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease,
+    width 0.2s ease;
+}
+
+.hero-carousel-wrap .oc-dots .oc-dot:hover {
+  background: rgba(255, 255, 255, 0.35);
+  border-color: #fff;
+}
+
+.hero-carousel-wrap .oc-dots .oc-dot:focus-visible {
+  outline: 2px solid var(--oc-yellow);
+  outline-offset: 2px;
+}
+
+.hero-carousel-wrap .oc-dots .oc-dot[aria-current="true"] {
+  background: var(--oc-yellow);
+  border-color: var(--oc-yellow);
+  width: 26px;
+  box-shadow: 0 4px 12px rgba(248, 197, 21, 0.45);
+}
+
+.oc-status {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/*
+  Images locales (remplacer --oc-bg sur chaque .oc-slide ou modifier --oc-bg-fallback) :
+  assets/img/carousel/01-premium.jpg … 07-rejoindre.jpg
+*/

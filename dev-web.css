@@ -1,0 +1,431 @@
+/* ═══════════════════════════════════════════════
+   dev-web.css — Landing Développement Web
+   Moderne, clair, accent “code / stack”
+═══════════════════════════════════════════════ */
+
+.page-dev-web {
+  background:
+    linear-gradient(180deg, #f8fafc 0%, #f1f5f9 40%, #eef2f7 100%);
+}
+
+.page-dev-web .page-hero.dw-hero {
+  padding-bottom: 40px;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 55%, #1e3a5f 100%);
+  color: #e2e8f0;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-dev-web .dw-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.04;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.5) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.5) 1px, transparent 1px);
+  background-size: 24px 24px;
+  pointer-events: none;
+}
+
+.page-dev-web .dw-hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+.page-dev-web .dw-hero .breadcrumb {
+  color: rgba(226, 232, 240, 0.65);
+}
+
+.page-dev-web .dw-hero .breadcrumb a {
+  color: #5eead4;
+}
+
+.page-dev-web .dw-hero .breadcrumb a:hover {
+  color: #fff;
+}
+
+.page-dev-web .dw-hero .eyebrow {
+  color: #5eead4;
+  letter-spacing: 0.12em;
+  font-weight: 800;
+}
+
+.page-dev-web .dw-hero h1 {
+  font-family: "Outfit", sans-serif;
+  font-weight: 900;
+  font-size: clamp(2rem, 5vw, 3.1rem);
+  line-height: 1.08;
+  color: #fff;
+  max-width: 20ch;
+  margin-bottom: 18px;
+}
+
+.page-dev-web .dw-hero .page-hero-text {
+  font-size: 1.1rem;
+  line-height: 1.78;
+  color: rgba(226, 232, 240, 0.9);
+  max-width: 62ch;
+}
+
+.page-dev-web .dw-hero .page-hero-text strong {
+  color: #fff;
+}
+
+.dw-code-tag {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-family: ui-monospace, "Cascadia Code", "Segoe UI Mono", monospace;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #5eead4;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgba(94, 234, 212, 0.35);
+}
+
+.dw-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 26px;
+}
+
+.page-dev-web .dw-hero .btn-primary {
+  background: linear-gradient(135deg, #2dd4bf, #14b8a6);
+  color: #0f172a;
+  border: none;
+  font-weight: 800;
+}
+
+.page-dev-web .dw-hero .btn-primary:hover {
+  filter: brightness(1.05);
+}
+
+.page-dev-web .dw-hero .btn-outline {
+  border-color: rgba(255, 255, 255, 0.35);
+  color: #fff;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.page-dev-web .dw-hero .page-hero-bg .hero-blob {
+  opacity: 0.25;
+}
+
+.dw-sticky-nav {
+  position: sticky;
+  top: 72px;
+  z-index: 18;
+  padding: 12px 0;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #cbd5e1;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.06);
+}
+
+.dw-sticky-inner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding-bottom: 2px;
+}
+
+.dw-sticky-inner::-webkit-scrollbar {
+  display: none;
+}
+
+.dw-sticky-inner a {
+  flex-shrink: 0;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid #cbd5e1;
+  background: #fff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #475569;
+  transition: color 160ms, border-color 160ms, background 160ms;
+}
+
+.dw-sticky-inner a:hover,
+.dw-sticky-inner a:focus-visible {
+  color: #0f172a;
+  border-color: #14b8a6;
+  background: #f0fdfa;
+}
+
+.dw-section {
+  padding: 56px 0 0;
+  scroll-margin-top: 124px;
+}
+
+.dw-section-heading {
+  max-width: 700px;
+  margin-bottom: 26px;
+}
+
+.dw-section-heading h2 {
+  margin: 0 0 12px;
+  font-family: "Outfit", sans-serif;
+  font-size: clamp(1.6rem, 3.2vw, 2.25rem);
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.12;
+}
+
+.dw-section-heading p {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #64748b;
+}
+
+.dw-intro-panel {
+  padding: 26px 30px;
+  border-radius: var(--radius-lg);
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  box-shadow: var(--shadow-soft);
+}
+
+.dw-intro-panel p {
+  margin: 0 0 14px;
+  font-size: 1.04rem;
+  line-height: 1.78;
+  color: #334155;
+}
+
+.dw-intro-panel p:last-child {
+  margin-bottom: 0;
+}
+
+.dw-skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.dw-skill-card {
+  padding: 20px 20px 22px;
+  border-radius: var(--radius-md);
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.dw-skill-card:hover {
+  border-color: #99f6e4;
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
+}
+
+.dw-skill-card h3 {
+  margin: 0 0 8px;
+  font-family: "Outfit", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.dw-skill-card ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  font-size: 0.93rem;
+  line-height: 1.65;
+  color: #64748b;
+}
+
+.dw-tools-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.dw-tool-pill {
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-family: ui-monospace, "Cascadia Code", "Segoe UI Mono", monospace;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #0f766e;
+  background: linear-gradient(135deg, #ecfdf5, #f0fdfa);
+  border: 1px solid #99f6e4;
+}
+
+.dw-timeline {
+  position: relative;
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+.dw-timeline::before {
+  content: "";
+  position: absolute;
+  left: 15px;
+  top: 6px;
+  bottom: 6px;
+  width: 3px;
+  border-radius: 3px;
+  background: linear-gradient(180deg, #14b8a6, #0d9488 50%, #64748b);
+}
+
+.dw-step {
+  position: relative;
+  padding-left: 48px;
+  margin-bottom: 22px;
+  scroll-margin-top: 128px;
+}
+
+.dw-step:last-child {
+  margin-bottom: 0;
+}
+
+.dw-step-num {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: #0f172a;
+  color: #5eead4;
+  font-family: "Outfit", sans-serif;
+  font-weight: 900;
+  font-size: 0.8rem;
+  display: grid;
+  place-items: center;
+  z-index: 1;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.35);
+}
+
+.dw-step-card {
+  padding: 20px 22px 22px;
+  border-radius: var(--radius-md);
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  box-shadow: var(--shadow-soft);
+}
+
+.dw-step-card h3 {
+  margin: 0 0 8px;
+  font-family: "Outfit", sans-serif;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.dw-step-card p {
+  margin: 0;
+  font-size: 0.96rem;
+  line-height: 1.7;
+  color: #64748b;
+}
+
+.dw-project-spotlight {
+  margin-top: 48px;
+  padding: 32px 34px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, #0f172a 0%, #134e4a 100%);
+  color: #e2e8f0;
+  border: 1px solid rgba(94, 234, 212, 0.25);
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.25);
+}
+
+.dw-project-spotlight h2 {
+  margin: 0 0 12px;
+  font-family: "Outfit", sans-serif;
+  font-size: clamp(1.4rem, 3vw, 1.85rem);
+  font-weight: 800;
+  color: #fff;
+}
+
+.dw-project-spotlight > p {
+  margin: 0 0 18px;
+  font-size: 1.02rem;
+  line-height: 1.75;
+  color: rgba(226, 232, 240, 0.88);
+  max-width: 65ch;
+}
+
+.dw-project-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.dw-project-list li {
+  position: relative;
+  padding-left: 22px;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: rgba(226, 232, 240, 0.92);
+}
+
+.dw-project-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #5eead4;
+}
+
+.dw-outcomes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.dw-outcome-card {
+  padding: 20px;
+  border-radius: var(--radius-md);
+  background: #fff;
+  border: 1px solid #e2e8f0;
+}
+
+.dw-outcome-card strong {
+  display: block;
+  font-family: "Outfit", sans-serif;
+  font-size: 1.02rem;
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+
+.dw-outcome-card p {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: #64748b;
+}
+
+.dw-cta-band {
+  margin-top: 52px;
+}
+
+@media (max-width: 900px) {
+  .dw-skills-grid,
+  .dw-outcomes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dw-project-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .dw-sticky-nav {
+    top: 60px;
+  }
+
+  .page-dev-web .dw-hero h1 {
+    max-width: none;
+  }
+}

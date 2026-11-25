@@ -1,0 +1,50 @@
+/**
+ * Smartech Formations — design tokens (source unique)
+ * Palette confirmée cahier des charges / charte existante.
+ * Importer via styles.css (@import) ; ne pas dupliquer ailleurs.
+ */
+:root {
+  /* Palette officielle */
+  --color-primary: #2fafe3;
+  --color-primary-dark: #123b5d;
+  --color-heading: #0f2742;
+  --color-accent: #f8c515;
+  --color-bg: #f7f9fc;
+
+  /* Alias historiques (compat pages / composants) */
+  --primary: var(--color-primary);
+  --primary-dark: var(--color-primary-dark);
+  --heading: var(--color-heading);
+  --accent: var(--color-accent);
+  --bg: var(--color-bg);
+
+  /* Surfaces & texte */
+  --bg-soft: #eef4fb;
+  --surface: #ffffff;
+  --surface-alt: #f4f8fd;
+  --text: #111827;
+  --muted: #4b5c6e; /* légèrement plus sombre que #5f6f82 pour meilleur contraste */
+  --line: #d9e5f2;
+
+  /* Sémantique */
+  --success: #15803d;
+  --success-bg: #ecfdf3;
+  --error: #b91c1c;
+  --error-bg: #fef2f2;
+  --focus-ring: #0b6e99;
+
+  /* Élévation / forme */
+  --shadow: 0 24px 60px rgba(17, 39, 66, 0.12);
+  --shadow-soft: 0 14px 34px rgba(17, 39, 66, 0.08);
+  --radius-lg: 28px;
+  --radius-md: 22px;
+  --radius-sm: 16px;
+  --container: min(1180px, calc(100vw - 32px));
+
+  /* Typo */
+  --font-display: "Outfit", system-ui, sans-serif;
+  --font-body: "Manrope", system-ui, sans-serif;
+
+  /* Contact bar mobile */
+  --contact-bar-h: 64px;
+}

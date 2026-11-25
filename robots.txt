@@ -1,0 +1,34 @@
+# Smartech Formations Mahdia
+User-agent: *
+Allow: /
+
+# Fichiers utiles aux moteurs & assistants IA
+Allow: /llms.txt
+Allow: /sitemap.xml
+
+# Confirmation funnel (page technique)
+Disallow: /entrepreneuriat-confirmation.html
+
+# Crawlers IA courants — contenu public autorisé
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+Sitemap: https://www.smartech-formations.com/sitemap.xml

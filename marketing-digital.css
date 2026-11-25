@@ -1,0 +1,411 @@
+/* ═══════════════════════════════════════════════
+   marketing-digital.css — Landing Marketing Digital
+   Premium, concret, très lisible
+═══════════════════════════════════════════════ */
+
+.page-marketing-digital {
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(47, 175, 227, 0.08), transparent),
+    linear-gradient(180deg, #fbfdff 0%, #f5f8fc 35%, #f0f4f9 100%);
+}
+
+.page-marketing-digital .page-hero.md-hero {
+  padding-bottom: 40px;
+  background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0.65) 100%);
+  border-bottom: 1px solid var(--line);
+}
+
+.page-marketing-digital .md-hero .eyebrow {
+  color: var(--primary-dark);
+  letter-spacing: 0.12em;
+  font-weight: 800;
+}
+
+.page-marketing-digital .md-hero h1 {
+  font-family: "Outfit", sans-serif;
+  font-weight: 900;
+  font-size: clamp(2.15rem, 5vw, 3.25rem);
+  line-height: 1.08;
+  color: var(--heading);
+  max-width: 18ch;
+  margin-bottom: 18px;
+}
+
+.page-marketing-digital .md-hero .page-hero-text {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: var(--muted);
+  max-width: 62ch;
+}
+
+.page-marketing-digital .md-hero .page-hero-text strong {
+  color: var(--heading);
+}
+
+.md-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 26px;
+}
+
+.md-sticky-nav {
+  position: sticky;
+  top: 72px;
+  z-index: 18;
+  padding: 12px 0;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line);
+  box-shadow: 0 6px 24px rgba(17, 39, 66, 0.05);
+}
+
+.md-sticky-inner {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding-bottom: 2px;
+}
+
+.md-sticky-inner::-webkit-scrollbar {
+  display: none;
+}
+
+.md-sticky-inner a {
+  flex-shrink: 0;
+  padding: 8px 15px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: #fff;
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--muted);
+  transition: color 160ms, border-color 160ms, background 160ms, box-shadow 160ms;
+}
+
+.md-sticky-inner a:hover,
+.md-sticky-inner a:focus-visible {
+  color: var(--primary-dark);
+  border-color: rgba(47, 175, 227, 0.45);
+  box-shadow: 0 2px 12px rgba(47, 175, 227, 0.12);
+}
+
+.md-section {
+  padding: 64px 0 0;
+  scroll-margin-top: 128px;
+}
+
+.md-section:first-of-type {
+  padding-top: 48px;
+}
+
+.md-section-heading {
+  max-width: 680px;
+  margin-bottom: 28px;
+}
+
+.md-section-heading .eyebrow {
+  margin-bottom: 10px;
+}
+
+.md-section-heading h2 {
+  margin: 0 0 12px;
+  font-family: "Outfit", sans-serif;
+  font-size: clamp(1.65rem, 3.5vw, 2.35rem);
+  font-weight: 800;
+  color: var(--heading);
+  line-height: 1.12;
+}
+
+.md-section-heading p {
+  margin: 0;
+  font-size: 1.06rem;
+  line-height: 1.75;
+  color: var(--muted);
+}
+
+.md-intro-panel {
+  padding: 28px 32px;
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-soft);
+}
+
+.md-intro-panel p {
+  margin: 0 0 16px;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text);
+}
+
+.md-intro-panel p:last-child {
+  margin-bottom: 0;
+}
+
+.md-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.md-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.md-audience-card {
+  padding: 22px 22px 24px;
+  border-radius: var(--radius-md);
+  background: #fff;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-soft);
+  transition: border-color 180ms, box-shadow 180ms;
+}
+
+.md-audience-card:hover {
+  border-color: rgba(47, 175, 227, 0.35);
+  box-shadow: 0 16px 40px rgba(17, 39, 66, 0.1);
+}
+
+.md-audience-card .md-card-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  font-size: 1.35rem;
+  background: linear-gradient(135deg, rgba(47, 175, 227, 0.12), rgba(248, 197, 21, 0.12));
+  margin-bottom: 14px;
+}
+
+.md-audience-card h3 {
+  margin: 0 0 8px;
+  font-family: "Outfit", sans-serif;
+  font-size: 1.12rem;
+  font-weight: 800;
+  color: var(--heading);
+}
+
+.md-audience-card p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.68;
+  color: var(--muted);
+}
+
+.md-learn-wrap {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.md-learn-block {
+  padding: 24px 26px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(165deg, rgba(255, 255, 255, 0.95), var(--surface-alt));
+  border: 1px solid var(--line);
+}
+
+.md-learn-block h3 {
+  margin: 0 0 14px;
+  font-family: "Outfit", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: var(--primary-dark);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.md-learn-block ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.md-learn-block li {
+  position: relative;
+  padding-left: 26px;
+  margin-bottom: 10px;
+  font-size: 0.98rem;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.md-learn-block li:last-child {
+  margin-bottom: 0;
+}
+
+.md-learn-block li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.45em;
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  background: linear-gradient(135deg, var(--primary), rgba(47, 175, 227, 0.5));
+  box-shadow: 0 2px 6px rgba(47, 175, 227, 0.35);
+}
+
+.md-learn-block li::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: calc(0.45em + 4px);
+  width: 5px;
+  height: 3px;
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: rotate(-45deg);
+}
+
+/* Programme — timeline moderne */
+.md-program {
+  position: relative;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.md-program::before {
+  content: "";
+  position: absolute;
+  left: 19px;
+  top: 8px;
+  bottom: 8px;
+  width: 3px;
+  border-radius: 3px;
+  background: linear-gradient(180deg, var(--primary), rgba(18, 59, 93, 0.25));
+}
+
+.md-program-step {
+  position: relative;
+  padding-left: 56px;
+  margin-bottom: 28px;
+  scroll-margin-top: 130px;
+}
+
+.md-program-step:last-child {
+  margin-bottom: 0;
+}
+
+.md-program-step::before {
+  content: attr(data-step);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: var(--heading);
+  color: #fff;
+  font-family: "Outfit", sans-serif;
+  font-weight: 900;
+  font-size: 0.95rem;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 6px 20px rgba(15, 39, 66, 0.25);
+  z-index: 1;
+}
+
+.md-program-card {
+  padding: 22px 24px 24px;
+  border-radius: var(--radius-md);
+  background: #fff;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-soft);
+}
+
+.md-program-card h3 {
+  margin: 0 0 6px;
+  font-family: "Outfit", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--heading);
+}
+
+.md-program-card .md-mod-tag {
+  display: inline-block;
+  margin-bottom: 12px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  letter-spacing: 0.04em;
+}
+
+.md-program-card p {
+  margin: 0 0 12px;
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.md-program-card ul {
+  margin: 0;
+  padding-left: 1.15rem;
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: var(--text);
+}
+
+.md-program-card ul li {
+  margin-bottom: 6px;
+}
+
+.md-outcomes-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.md-outcome-card {
+  padding: 20px 20px 22px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line);
+  background: #fff;
+}
+
+.md-outcome-card strong {
+  display: block;
+  font-family: "Outfit", sans-serif;
+  font-size: 1.05rem;
+  color: var(--heading);
+  margin-bottom: 8px;
+}
+
+.md-outcome-card p {
+  margin: 0;
+  font-size: 0.93rem;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+.md-cta-band {
+  margin-top: 56px;
+}
+
+@media (max-width: 900px) {
+  .md-grid-3,
+  .md-outcomes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .md-grid-2,
+  .md-learn-wrap {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .md-sticky-nav {
+    top: 60px;
+  }
+
+  .page-marketing-digital .md-hero h1 {
+    max-width: none;
+  }
+}
